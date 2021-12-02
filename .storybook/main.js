@@ -9,5 +9,6 @@ module.exports = {
     "@storybook/addon-measure",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
+    "storybook-addon-material-ui5",
   ],
 };
