@@ -55,7 +55,6 @@
     "rollup-plugin-react-svg": "^3.0.3",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.1",
-    "standard-version": "^9.3.2",
     "storybook-addon-mock": "^2.0.1",
     "ts-jest": "^27.1.1",
     "typescript": "^4.4.4"
@@ -75,7 +74,7 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "test": "jest",
-    "release": "standard-version"
+    "release": "standard-version --skip.commit"
   },
   "jest": {
     "transform": {
