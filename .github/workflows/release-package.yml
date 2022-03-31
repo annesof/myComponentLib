@@ -9,11 +9,14 @@ jobs:
       packages: write
       contents: read
     steps:
+      - name: Publish to GitHub Packages
+      - env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/annesof
+          registry-url: https://npm.pkg.github.com
       - run: yarn
       - run: yarn build
       - run: npm publish
