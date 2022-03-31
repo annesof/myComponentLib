@@ -3,51 +3,6 @@ name: swui package
 on: push
 
 jobs:
-  changelog:
-  exclude:
-    labels:
-      - ignore-for-release
-    authors:
-      - octocat
-  categories:
-    - title: Breaking Changes
-      labels:
-        - Semver-Major
-        - breaking-change
-    - title: Exciting New Features 🎉
-      labels:
-        - Semver-Minor
-        - enhancement
-    - title: Other Changes
-      labels:
-        - "*"
-  bump-version:
-    name: 'Bump Version on master'
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Checkout source code'
-        uses: 'actions/checkout@v2'
-      - name: 'cat package.json'
-        run: cat ./package.json
-      - name: 'Automated Version Bump'
-        id: version-bump
-        uses: 'phips28/gh-action-bump-version@master'
-        with:
-          tag-prefix: 'v'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          minor-wording:  'feat'
-          major-wording:  'MAJOR,cut-major'
-          patch-wording:  'patch,fix'     # Providing patch-wording will override commits
-                                      # defaulting to a patch bump.
-          rc-wording:     'RELEASE,alpha'
-      - name: 'cat package.json'
-        run: cat ./package.json
-      - name: 'Output Step'
-        env:
-          NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
-        run: echo "new tag $NEW_TAG"
   publish-gpr:
     runs-on: ubuntu-latest
     permissions:
@@ -61,6 +16,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
       - run: yarn
       - run: yarn build
+      - run: yarn release
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
