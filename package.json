@@ -1,5 +1,5 @@
 {
-  "name": "my-component-lib-asd",
+  "name": "@annesof/my-component-lib-asd",
   "version": "1.0.12",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
