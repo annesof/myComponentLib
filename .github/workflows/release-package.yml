@@ -17,7 +17,7 @@ jobs:
       - name: Configure committer
         run: |
           git config user.name "GitHub Actions Bot2"
-          git config user.email "<>"
+          git config user.email "<titi@dfgfdg.fr>"
       - run: yarn
       - run: yarn release
       - run: yarn build
