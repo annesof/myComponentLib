@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/annesof/myComponentLib.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@material-ui/core": "^4.12.3",
