@@ -14,7 +14,7 @@
     "url": "git+https://github.com/annesof/myComponentLib.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/annesof"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
