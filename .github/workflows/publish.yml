@@ -1,9 +1,9 @@
-name: swui package
+name: CI
 
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 jobs:
   publish:
