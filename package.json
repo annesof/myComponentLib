@@ -1,6 +1,6 @@
 {
   "name": "@annesof/my-component-lib",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -76,7 +76,7 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "test": "jest",
-    "release": "standard-version -i RELEASE_BODY.md"
+    "release": "standard-version -i"
   },
   "jest": {
     "transform": {
