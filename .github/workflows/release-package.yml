@@ -9,14 +9,14 @@ jobs:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # gives standard-version access to all previous commits
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com
-      - name: Configure committer
+        name: Configure committer
         id: publish_tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -25,15 +25,9 @@ jobs:
           git config user.email "<titi@dfgfdg.fr>"
           yarn
           yarn release
+          git push --follow-tags origin master
+          yarn publish
           echo ::set-output name=tag_name::$(git describe HEAD --abbrev=0)
-      - name: create release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          release_name: Release ${{ steps.publish_tag.outputs.tag_name }}
-          tag_name: ${{ steps.publish_tag.outputs.tag_name }}
-          body_path: RELEASE_BODY.md
       # - run: yarn
       # - run: yarn release
       # - run: yarn build
