@@ -23,7 +23,8 @@ jobs:
           git config --local user.name "annesof"
           yarn
           yarn release
-          git push https://$USERNAME:$REPO_KEY@github.com/annesof/myComponentLib.git --follow-tags
+          git remote set-url --push origin https://$USERNAME:$REPO_KEY@github.com/annesof/myComponentLib
+          git push --follow-tags
           yarn publish
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
