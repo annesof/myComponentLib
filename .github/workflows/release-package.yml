@@ -20,14 +20,14 @@ jobs:
         id: publish_tag
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.name "annesof"
           yarn
           yarn release
           git push https://$USERNAME:$REPO_KEY@github.com/annesof/myComponentLib.git --follow-tags
           yarn publish
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: github-actions[bot]
+          USERNAME: annesof
       # - run: yarn
       # - run: yarn release
       # - run: yarn build
