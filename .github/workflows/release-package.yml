@@ -26,7 +26,7 @@ jobs:
           git push https://$USERNAME:$REPO_KEY@github.com/annesof/myComponentLib.git --follow-tags
           yarn publish
         env:
-          REPO_KEY: ${{ secrets.PUBLISH_TOKEN }}
+          REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: github-actions[bot]
       # - run: yarn
       # - run: yarn release
