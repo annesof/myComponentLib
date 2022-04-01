@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          persist-credentials: false
+          #persist-credentials: false
           fetch-depth: 0 # gives standard-version access to all previous commits
       - uses: actions/setup-node@v3
         with:
