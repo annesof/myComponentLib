@@ -20,6 +20,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot2"
           git config user.email "<titi@dfgfdg.fr>"
+          yarn
           yarn release
       - name: publish tag
         id: publish_tag
