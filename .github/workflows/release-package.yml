@@ -11,13 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          #persist-credentials: false
           fetch-depth: 0 # gives standard-version access to all previous commits
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com
-      - name: Configure committer
+          # registry-url: https://npm.pkg.github.com
+      - name: Release
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "annesof"
@@ -32,6 +31,3 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           registry: https://npm.pkg.github.com
-      # - run: yarn
-      # - run: yarn release
-      # - run: yarn build
