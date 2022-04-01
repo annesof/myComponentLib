@@ -75,7 +75,7 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "test": "jest",
-    "release": "standard-version"
+    "release": "standard-version -i RELEASE_BODY.md --skip.commit"
   },
   "jest": {
     "transform": {

@@ -10,6 +10,8 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # gives standard-version access to all previous commits
       - uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -18,6 +20,20 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot2"
           git config user.email "<titi@dfgfdg.fr>"
-      - run: yarn
-      - run: yarn release
-      - run: yarn build
+          yarn release
+      - name: publish tag
+        id: publish_tag
+        run: |
+          git push --follow-tags
+          echo ::set-output name=tag_name::$(git describe HEAD --abbrev=0)
+      - name: create release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: Release ${{ steps.publish_tag.outputs.tag_name }}
+          tag_name: ${{ steps.publish_tag.outputs.tag_name }}
+          body_path: RELEASE_BODY.md
+      # - run: yarn
+      # - run: yarn release
+      # - run: yarn build
