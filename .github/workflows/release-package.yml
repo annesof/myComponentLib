@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com
-        name: Configure committer
+      - name: Configure committer
         id: publish_tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
