@@ -1,9 +1,7 @@
-name: swui package
-
 on: push
 
 jobs:
-  publish-gpr:
+  tag-release:
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -15,16 +13,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          # registry-url: https://npm.pkg.github.com
+      - name: Install dependencies
+        run: yarn
+      - name: run tests
+        run: yarn test
       - name: Release
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "annesof"
-          yarn
           yarn release
           git push --follow-tags
-        # echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-        #  npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: JS-DevTools/npm-publish@v1
