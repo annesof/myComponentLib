@@ -1,23 +1,17 @@
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import typescript from "rollup-plugin-typescript2";
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
 
-const pkg = require("./package.json");
+const pkg = require('./package.json');
 
 export default {
-  input: "./src/index.ts",
+  input: './src/index.ts',
   output: [
     {
-      file: pkg.main,
-      format: "cjs",
-      exports: "named",
-      sourcemap: true,
-    },
-    {
       file: pkg.module,
-      format: "esm",
-      exports: "named",
+      format: 'esm',
+      exports: 'named',
       sourcemap: true,
     },
   ],
@@ -27,8 +21,8 @@ export default {
     commonjs(),
     typescript({
       declaration: true,
-      declarationDir: "lib/types/",
-      rootDir: "src/",
+      declarationDir: 'lib/types/',
+      rootDir: 'src/',
     }),
   ],
 };

@@ -11352,6 +11352,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rollup-plugin-gzip@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-gzip/-/rollup-plugin-gzip-3.0.0.tgz#2a3c7c9a79c9448082c7a567ef819a9877a0f1f7"
+  integrity sha512-xvyKihEdKygVk0vJt0tKytVw/WgLEMghX1uWhNc7ANuTpXw46fhvdTTDGC1OHxFBSEwUQ1I34b7S3iD8l+L30g==
+
 rollup-plugin-peer-deps-external@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/rollup-plugin-peer-deps-external/-/rollup-plugin-peer-deps-external-2.2.4.tgz#8a420bbfd6dccc30aeb68c9bf57011f2f109570d"

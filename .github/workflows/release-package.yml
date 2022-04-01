@@ -1,26 +1,31 @@
-name: swui package
-
 on: push
 
 jobs:
-  publish-gpr:
+  tag-release:
     runs-on: ubuntu-latest
     permissions:
       packages: write
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+        with:
+          fetch-depth: 0 # gives standard-version access to all previous commits
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com
-      - name: Configure committer
+      - name: Install dependencies
+        run: yarn
+      - name: run tests
+        run: yarn test
+      - name: Release
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-      - run: yarn
-      - run: yarn release
-      - run: yarn build
-      - run: npm publish
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "annesof"
+          yarn release
+          git push --follow-tags
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry: https://npm.pkg.github.com
