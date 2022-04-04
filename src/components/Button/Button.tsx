@@ -15,7 +15,7 @@ export const useStyles = makeStyles(() => ({
   outlinedSizeSmall: {
     padding: '3px 11px 3px 15px',
     borderRadius: '20px',
-    margin: '0px 6px 0px 6px',
+    margin: '0px 6px 0px 4px',
   },
   outlinedSizeLarge: {
     padding: '7px 21px 7px 25px',
