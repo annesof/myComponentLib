@@ -44,6 +44,8 @@
     "@types/react": "^17.0.34",
     "@types/react-dom": "^16.9.10",
     "babel-loader": "^8.2.3",
+    "commitizen": "^4.2.4",
+    "cz-customizable": "^6.3.0",
     "jest": "^27.4.4",
     "ky": "^0.28.7",
     "postcss": "^8.4.0",
@@ -76,7 +78,8 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "test": "jest",
-    "release": "standard-version -i"
+    "release": "standard-version -i",
+    "cm": "cz"
   },
   "jest": {
     "transform": {
@@ -89,5 +92,10 @@
       "tsx",
       "js"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
   }
 }
