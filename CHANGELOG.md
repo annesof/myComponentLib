@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/annesof/myComponentLib/compare/v0.0.2...v0.0.3) (2022-04-04)
+
+
+### Bug Fixes
+
+* padding button ([#6](https://github.com/annesof/myComponentLib/issues/6)) ([8880444](https://github.com/annesof/myComponentLib/commit/88804441fe988ede1ab098d745e461bb3d8ee227))
+
 ### 0.0.2 (2022-04-04)
 
 
