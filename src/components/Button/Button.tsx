@@ -6,7 +6,7 @@ import { transitions } from 'polished';
 //component's rewrite because of a bug with typescript, prop "component" is not recognized
 export const useStyles = makeStyles(() => ({
   root: {
-    borderRadius: '20px',
+    borderRadius: '15px',
     boxShadow: 'none',
     lineHeight: 1.65,
     padding: '3px 13px 3px 19px',
