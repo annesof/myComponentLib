@@ -53,7 +53,7 @@ export const useStyles = makeStyles(() => ({
       marginLeft: '6px',
     },
     '&.MuiButton-iconSizeLarge': {
-      marginLeft: '8px',
+      marginLeft: '10px',
     },
   },
 }));
