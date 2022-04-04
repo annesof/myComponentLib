@@ -9,13 +9,13 @@ export const useStyles = makeStyles(() => ({
     borderRadius: '20px',
     boxShadow: 'none',
     lineHeight: 1.65,
-    padding: '3px 13px 3px 20px',
+    padding: '3px 13px 3px 19px',
     ...transitions(['background', 'borderColor'], '250ms cubic-bezier(0.4, 0, 0.2, 1) 0s'),
   },
   outlinedSizeSmall: {
     padding: '3px 11px 3px 15px',
     borderRadius: '20px',
-    margin: '0px 6px 0px 4px',
+    margin: '0px 6px 0px 6px',
   },
   outlinedSizeLarge: {
     padding: '7px 21px 7px 25px',
