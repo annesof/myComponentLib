@@ -28,7 +28,7 @@ export const useStyles = makeStyles(() => ({
   },
   containedSizeLarge: {
     padding: '7px 21px 7px 25px',
-    borderRadius: '20px',
+    borderRadius: '30px',
   },
   iconSizeSmall: {
     '&>*:first-child': {
